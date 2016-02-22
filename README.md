@@ -1,6 +1,6 @@
-### Personal Project - Template 1
+### Personal Project - Design Template 1
 
-Responsive Design template to flex HTML and CSS ability.
+Responsive design template to flex HTML and CSS ability.
 
-##### Live Preview - _Work in Progress_
-[http://ash-lee.github.io/](http://ash-lee.github.io/)
+##### Live Preview
+[http://ash-lee.github.io/1_DesignTemplate](http://ash-lee.github.io/1_DesignTemplate)
