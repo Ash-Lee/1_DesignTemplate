@@ -1,0 +1,578 @@
+/* Template 1 - CSS */
+/* Reset Sheet */
+/* ========================================
+ Meyer Web CSS Reset Sheet - Modified
+ http://meyerweb.com/eric/tools/css/reset/ 
+ v2.0 | 20110126
+ License: none (public domain)
+======================================== */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* button and form elements (input + select) not included */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: top; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Grid Framework */
+/*========================================*/
+/* User Defined Grid Variables */
+/*========================================*/
+/* Number of grid columns */
+/* Boundaries for fluid rows */
+/* Break points for fixed rows */
+/* Sticky footer height */
+/* Must be exact height of footer - taking into account borders of rows + container */
+/*========================================*/
+/* Clearfix */
+/*========================================*/
+.clearfix:before, .row:before, .row-full:before, .row-external:before,
+.clearfix:after,
+.row:after,
+.row-full:after,
+.row-external:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after, .row:after, .row-full:after, .row-external:after,
+.container:after {
+  clear: both; }
+
+/*========================================*/
+/* Containers - fluid */
+/*========================================*/
+/* Fluid container with margins */
+/* Fluid container without margins - full width */
+/* HTML containers for inline styling */
+.container {
+  margin-right: 5%;
+  margin-left: 5%; }
+
+.container-full {
+  margin-right: auto;
+  margin-left: auto; }
+
+/*========================================*/
+/* Container - fixed + breakpoints */
+/*========================================*/
+.container-fixed {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px; }
+  @media (min-width: 480px) {
+    .container-fixed {
+      width: auto; } }
+  @media (min-width: 768px) {
+    .container-fixed {
+      width: 750px; } }
+  @media (min-width: 992px) {
+    .container-fixed {
+      width: 970px; } }
+  @media (min-width: 1200px) {
+    .container-fixed {
+      width: 1080px; } }
+
+/*========================================*/
+/* Rows */
+/*========================================*/
+/* Normal row - allows combined external (container) + internal (column) margins */
+.row {
+  display: block;
+  /* clears for rows and containers */ }
+
+/* Full width row - without external (container) margins */
+/* Combine with 'column-full' to remove extra internal (column) margins */
+.row-full {
+  display: block;
+  margin-right: -15px;
+  margin-left: -15px; }
+
+/* Normal row - with purely external (container + row) margins - useful for borders */
+/* Combine with 'column-full' to remove extra internal (column) margins */
+.row-external {
+  display: block;
+  margin-right: 15px;
+  margin-left: 15px; }
+
+/*========================================*/
+/* Boundaries - fluid rows */
+/*========================================*/
+/* Set boundaries for full width fluid rows (or containers) - e.g. headers + footers */
+/*========================================*/
+/* Columns */
+/*========================================*/
+/* Columns with margins */
+/* Columns without margins - full width */
+/*========================================*/
+/* Sticky Footer */
+/*========================================*/
+/* Requires margin:0 and height:100% on html + body elements */
+/* Be careful using margins on/near the footer - use padding instead */
+/* Use these classes directly or apply via @extend */
+/* Main content wrapper */
+.page-container {
+  min-height: 100%;
+  height: auto !important;
+  /* Sets minimum height in IE6 and below */
+  height: 100%;
+  margin: 0 auto -32px; }
+
+/* Sticky footer */
+/* .push placed at end of .page-container */
+/* .sticky-footer is only element placed outside of .page-container */
+/* Footer is pulled up by the negative margin on the page-container to occupy the empty space created by .push */
+.push,
+.sticky-footer {
+  height: 32px;
+  /* Height of the footer */
+  clear: both; }
+
+html, body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  background-color: #F9F9F9;
+  color: #888888; }
+
+/* ========================================
+  Variables
+======================================== */
+/* ========================================
+  Default Styles
+======================================== */
+article {
+  margin-bottom: 40px; }
+
+a {
+  color: #666;
+  text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Slab"; }
+
+h3 {
+  margin-bottom: 10px; }
+
+h4 {
+  color: #000; }
+
+p {
+  line-height: 1.5; }
+
+/* ========================================
+  Page Container
+======================================== */
+.container-fixed {
+  position: relative;
+  margin: 50px auto;
+  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+  padding-top: 30px;
+  background-color: #FFF; }
+  .container-fixed::before, .container-fixed::after {
+    content: '';
+    position: absolute;
+    left: 1%;
+    height: 8px;
+    width: 98%;
+    background-color: #79b443; }
+  .container-fixed::before {
+    top: -8px; }
+  .container-fixed::after {
+    bottom: -8px; }
+
+/* ========================================
+  Header
+======================================== */
+/* --Main Header-- */
+.header-r1-c1 {
+  width: 100%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 40px; }
+  .header-r1-c1 h1 {
+    margin: 0 auto;
+    border-bottom: 4px solid #79b443;
+    width: 60%;
+    padding-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+    color: #000; }
+
+/* --Nav Bar-- */
+.header-r2-c1 {
+  width: 100%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 20px;
+  text-align: center; }
+  .header-r2-c1 ul li {
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 18px;
+    color: #666;
+    font-family: "Roboto Slab"; }
+    .header-r2-c1 ul li:hover a {
+      color: #79b443; }
+
+/* --Newsfeed-- */
+.header-r3-c1 {
+  width: 100%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  color: #FFF; }
+  .header-r3-c1 .newsfeed-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #6C7471;
+    padding-left: 30px;
+    padding-right: 10px;
+    text-align: center; }
+    .header-r3-c1 .newsfeed-title h2 {
+      line-height: 40px;
+      vertical-align: middle;
+      font-size: 14px; }
+  .header-r3-c1 .newsfeed-body {
+    width: 100%;
+    padding: 12px;
+    padding-left: 150px;
+    background-color: #87918D; }
+    .header-r3-c1 .newsfeed-body span {
+      display: inline-block;
+      vertical-align: middle;
+      font-style: italic;
+      font-size: 14px; }
+
+/* ========================================
+  Slider
+======================================== */
+.slider {
+  position: relative;
+  height: 370px;
+  content: '';
+  background-color: #ADD8E6;
+  margin-bottom: 20px; }
+  .slider .left-arrow, .slider .right-arrow {
+    position: absolute;
+    top: 50%;
+    height: 43px;
+    width: 29px;
+    cursor: pointer;
+    /* Offset top 50% by half of div size */
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+  .slider .left-arrow {
+    left: 0;
+    background: url(../assets/arrows.png) left top no-repeat; }
+  .slider .right-arrow {
+    right: 0;
+    background: url(../assets/arrows.png) right top no-repeat; }
+
+/* ========================================
+  Content
+======================================== */
+/* --Main Content-- */
+.maincontent {
+  margin-bottom: 20px; }
+  @media (max-width: 990px) {
+    .maincontent .content-r1-c1 {
+      width: 100%;
+      float: left;
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; }
+    .maincontent .content-r1-c2 {
+      display: none; } }
+
+.content-r1-c1 {
+  width: 75%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  .content-r1-c1 .heavy-section h2 {
+    background-color: #7DB24A;
+    color: #FFF;
+    padding: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Roboto Slab"; }
+  .content-r1-c1 .heavy-section P {
+    background-color: #B4D296;
+    color: #FFF;
+    padding: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: "Roboto Slab";
+    text-align: center; }
+  .content-r1-c1 .medium-section h3 {
+    color: #99cc00;
+    font-size: 18px; }
+  .content-r1-c1 .light-section {
+    text-align: center; }
+    .content-r1-c1 .light-section h4 {
+      border-bottom: 1px solid #E9E9E9;
+      padding-bottom: 10px;
+      color: #000;
+      text-align: left;
+      margin-bottom: 20px; }
+    .content-r1-c1 .light-section .profile {
+      display: inline-block;
+      margin-left: 20px;
+      margin-right: 20px;
+      text-align: left;
+      width: 200px; }
+      .content-r1-c1 .light-section .profile .profile-pic {
+        height: 120px;
+        background-color: #E9E9E9;
+        margin-bottom: 10px;
+        border: 1px solid #D2D2D2; }
+      .content-r1-c1 .light-section .profile .profile-info h5 {
+        margin-bottom: 5px;
+        color: #000; }
+      .content-r1-c1 .light-section .profile .profile-info h6 {
+        font-size: 12px;
+        margin-bottom: 10px; }
+      .content-r1-c1 .light-section .profile .profile-info p {
+        font-size: 14px; }
+      @media (max-width: 1190px) {
+        .content-r1-c1 .light-section .profile {
+          width: 150px; } }
+      @media (max-width: 650px) {
+        .content-r1-c1 .light-section .profile {
+          display: block;
+          margin: 0 auto 30px; } }
+
+/* --Side Content-- */
+.content-r1-c2 {
+  width: 25%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  .content-r1-c2 .side-section {
+    border: 1px solid #D2D2D2;
+    margin-bottom: 60px;
+    text-align: center; }
+    .content-r1-c2 .side-section div {
+      border-top: 20px solid #66B3CC;
+      height: 180px;
+      background-color: #E9E9E9; }
+  .content-r1-c2 .form-section {
+    padding: 20px;
+    padding-bottom: 0; }
+    .content-r1-c2 .form-section h3 {
+      color: #E37100;
+      font-size: 18px; }
+    .content-r1-c2 .form-section p {
+      margin-bottom: 20px;
+      line-height: 1.0; }
+    .content-r1-c2 .form-section form {
+      margin-bottom: 20px;
+      border-top: 1px solid #E9E9E9;
+      border-bottom: 1px solid #E9E9E9;
+      padding: 20px 0; }
+      .content-r1-c2 .form-section form input[type="text"], .content-r1-c2 .form-section form input[type="email"], .content-r1-c2 .form-section form input[type="submit"] {
+        width: 90%;
+        border: 1px solid #DBDBDB;
+        border-radius: 5px;
+        padding: 5px; }
+      .content-r1-c2 .form-section form input[type="text"], .content-r1-c2 .form-section form input[type="email"] {
+        margin-bottom: 10px;
+        text-align: center;
+        background-color: #F5F5F5;
+        color: #888; }
+      .content-r1-c2 .form-section form input[type="submit"] {
+        font-weight: bold;
+        color: #FFF;
+        cursor: pointer;
+        background: #7DB24A;
+        background: -webkit-linear-gradient(top, #7db24a, #b4d296);
+        background: -o-linear-gradient(top, #7db24a, #b4d296);
+        background: -moz-linear-gradient(top, #7db24a, #b4d296);
+        background: linear-gradient(to top, #7db24a, #b4d296); }
+        .content-r1-c2 .form-section form input[type="submit"]:hover {
+          background: #7DB24A;
+          background: -webkit-linear-gradient(top, #69981f, #b4d296);
+          background: -o-linear-gradient(top, #69981f, #b4d296);
+          background: -moz-linear-gradient(top, #69981f, #b4d296);
+          background: linear-gradient(to top, #69981f, #b4d296); }
+
+/* --Partners-- */
+.content-r2-c1 {
+  width: 100%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 40px; }
+  .content-r2-c1 h2 {
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 15px; }
+    @media (max-width: 400px) {
+      .content-r2-c1 h2 {
+        text-align: center; } }
+  .content-r2-c1 ul {
+    text-align: center;
+    font-size: 0;
+    /* Remove default inline-block whitespace */ }
+    .content-r2-c1 ul li {
+      display: inline-block;
+      border: 1px solid #D2D2D2;
+      height: 87px;
+      width: 158px;
+      background-color: #E9E9E9;
+      margin: 0 10px; }
+      @media (max-width: 990px) {
+        .content-r2-c1 ul li {
+          margin-bottom: 20px; } }
+      @media (max-width: 600px) {
+        .content-r2-c1 ul li {
+          height: 50px;
+          width: 100px; } }
+      @media (max-width: 400px) {
+        .content-r2-c1 ul li {
+          height: 40px;
+          width: 70px;
+          margin: 5px; } }
+
+/* ========================================
+  Footer
+======================================== */
+footer .row-full {
+  background-color: rgba(22, 22, 22, 0.9); }
+
+/* --Footer Row 1-- */
+.footer-r1-c1,
+.footer-r1-c2,
+.footer-r1-c3,
+.footer-r1-c4 {
+  width: 25%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 30px;
+  padding-right: 30px; }
+  .footer-r1-c1 h2,
+  .footer-r1-c2 h2,
+  .footer-r1-c3 h2,
+  .footer-r1-c4 h2 {
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 0 10px 0;
+    color: #FFF; }
+  @media (max-width: 740px) {
+    .footer-r1-c1,
+    .footer-r1-c2,
+    .footer-r1-c3,
+    .footer-r1-c4 {
+      float: none;
+      width: 100%;
+      float: left;
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; } }
+
+.footer-r1-c1 p {
+  margin-bottom: 5px;
+  color: #CCC; }
+  @media (max-width: 740px) {
+    .footer-r1-c1 p {
+      text-align: center; } }
+
+.footer-option {
+  margin-bottom: 10px;
+  border-left: 5px solid #323233;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  padding-left: 15px;
+  cursor: pointer; }
+  .footer-option a {
+    color: #CCC;
+    line-height: 23px; }
+  .footer-option:hover {
+    background-color: #79B443;
+    border-left: 5px solid #619036; }
+
+/* --Footer Row 2-- */
+.footer-r2-c1 {
+  width: 100%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 14px; }
+  .footer-r2-c1 p {
+    margin-bottom: 5px;
+    color: #999;
+    line-height: 1.0; }
+  .footer-r2-c1 a {
+    color: #999; }
